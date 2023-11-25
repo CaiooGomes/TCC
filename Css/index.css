@@ -12,9 +12,6 @@ body{
     cursor: pointer;
 }
 
-.tresbarra{
-    
-}
 
 .botoes-navbar button{
     background: none;
@@ -24,13 +21,27 @@ body{
     position: absolute;
     left: 0%;
     top: 7%;
+    transition: all 0.3s ease;
+}
+.botoes-navbar button:hover{
+    cursor: pointer;
+}
+
+.aumentarbotao{
+    animation: aumentarbotao 0.2s forwards;
+}
+.diminuirbotao{
+    animation: diminuirbotao 0.2s forwards;
 }
 .botaoabsolute{
     position: absolute;
+    color: white;
+    display: flex;
+    align-items: center;
 }
 
 .aumentartamanho{
-    animation: forwards 0.5s aumentarnavbar;
+    animation: forwards 0.2s aumentarnavbar;
 }
 
 
@@ -44,6 +55,7 @@ body{
     height: 100%;
     display: flex;
     flex-direction: column;
+    width: 3%;
 
 }
 
@@ -87,24 +99,7 @@ body{
     flex-direction: column;
  
 }
-.halfcircle{
-    position: absolute;
-    z-index: -1;
-    rotate: 90deg;
-    top: 11dvh;
-    left: 3.5dvh;
-    animation: halfcirclerotate 2s infinite;
-    box-shadow: 0px 0px 10px 10px blue;
-}
-.halfcircle2{
-    position: absolute;
-    rotate: -90deg;
-    z-index: -1;
-    left: 1dvh;
-    top: 11dvh;
-    animation: halfcirclerotate 2s infinite;
-    box-shadow: 0px 0px 10px 10px blue;
-}
+
 .zindexdivs{
     z-index: 1;
     color: white;
@@ -121,23 +116,27 @@ body{
     float: right;
 }
 .diminuirtamanho{
-    animation: forwards 0.5s diminuirnavbar;
+    animation: forwards 0.2s diminuirnavbar;
 }
 
-@keyframes halfcirclerotate{
+@keyframes aumentarbotao{
     0%{
-        transform: rotate(0deg);
-        top: 11dvh;
-    }
-    50%{
-        transform: rotate(170deg);
-        top: 30dvh;
+        scale: 1.0;
     }
     100%{
-        transform: rotate(360deg);
-        top: 11dvh;
+        scale: 1.2;
     }
 }
+
+@keyframes diminuirbotao{
+    0%{
+        scale: 1.2;
+    }
+    100%{
+        scale: 1.0;
+    }
+}
+
 
 @keyframes boxshadowbotaonavbar{
     0%{
@@ -159,19 +158,23 @@ body{
 
 @keyframes aumentarnavbar{
     0%{
-        width: 5%;
+        width: 2.5%;
+        border-right: solid rgb(0, 195, 255) 4px;
     }
     100%
     {
         width: 15%;
+        border-right: solid rgb(255, 255, 255) 4px;
     }
 }
 
 @keyframes diminuirnavbar{
     0%{
         width: 15%;
+        border-right: solid rgb(255, 255, 255) 4px;
     }
     100%{
-        width: 5%;
+        width: 2.5%;
+        border-right: solid rgb(0, 195, 255) 4px;
     }
 }
