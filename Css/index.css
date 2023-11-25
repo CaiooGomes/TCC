@@ -2,17 +2,52 @@
 body{
     background-color: black;
     margin: 0px;
- 
 
 }
+.tresbarras{
+    float: left;
+    width: 40px;
+}
+.tresbarras:hover{
+    cursor: pointer;
+}
+
+.tresbarra{
+    
+}
+
+.botoes-navbar button{
+    background: none;
+    border: none;
+    width: 20px;
+    float: left;
+    position: absolute;
+    left: 0%;
+    top: 7%;
+}
+.botaoabsolute{
+    position: absolute;
+}
+
+.aumentartamanho{
+    animation: forwards 0.5s aumentarnavbar;
+}
+
+
 .navbar{
+    margin-top: -16px;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.5);
-    border-bottom: solid rgb(0, 195, 255) 4px;
+    border-right: solid rgb(0, 195, 255) 4px;
+    float: left;
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
 }
 
-.botao-navbar{
+#meubotao{
     border: solid rgb(0, 195, 255) 2px;
     border-radius: 10px;
     height: 40px;
@@ -22,46 +57,121 @@ body{
     font-size: 20px;
     margin: 5px;
     font-family: 'Oswald', sans-serif;
-    animation: none;
+    transition: all 0.3s ease;
+
 }
-.botao-navbar:hover{
-    box-shadow: 0px 0px 10px 5px rgb(0, 195, 255);
-    animation: botao-navbar 2s infinite;
+
+#meubotao:hover{
+    box-shadow: 0px 0px 5px 5px rgb(0, 195, 255);
+}
+
+.sobremim{
+    margin-left: 5%;
+}
+.divgeralnavbar{
+    display: flex;
+    flex-direction: column;
 }
 
 .background-navbar{
     position: absolute;
     z-index: -1;
     top: 1px;
-    
 }
+
 
 .botoes-navbar{
     display: flex;
     align-items: center;
     width: 100%;
+    flex-direction: column;
  
+}
+.halfcircle{
+    position: absolute;
+    z-index: -1;
+    rotate: 90deg;
+    top: 11dvh;
+    left: 3.5dvh;
+    animation: halfcirclerotate 2s infinite;
+    box-shadow: 0px 0px 10px 10px blue;
+}
+.halfcircle2{
+    position: absolute;
+    rotate: -90deg;
+    z-index: -1;
+    left: 1dvh;
+    top: 11dvh;
+    animation: halfcirclerotate 2s infinite;
+    box-shadow: 0px 0px 10px 10px blue;
+}
+.zindexdivs{
+    z-index: 1;
+    color: white;
 }
 
 
 .div-navbar{
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 .div-navbar img{
     float: right;
 }
+.diminuirtamanho{
+    animation: forwards 0.5s diminuirnavbar;
+}
 
-@keyframes
-    botao-navbar{
-        0%{
-            background-image: linear-gradient(to right, rgb(0, 195, 255), rgb(0, 38, 49));
-        }
-        50%{
-            background-image: linear-gradient(to right, rgb(0, 195, 255), rgb(0, 162, 207));
-        }
-        100%{
-            background-image: linear-gradient(to right, rgb(0, 195, 255), rgb(0, 38, 49));
-        }
+@keyframes halfcirclerotate{
+    0%{
+        transform: rotate(0deg);
+        top: 11dvh;
     }
+    50%{
+        transform: rotate(170deg);
+        top: 30dvh;
+    }
+    100%{
+        transform: rotate(360deg);
+        top: 11dvh;
+    }
+}
+
+@keyframes boxshadowbotaonavbar{
+    0%{
+        box-shadow: 0px 0px 0px 0px rgb(4, 0, 255);
+    }
+    100%{
+        box-shadow: 0px 0px 2px 2px rgb(0, 195, 255);
+    }
+}
+
+
+
+@media (max-width: 750px) {
+    .botao-navbar{
+        width: 100px;
+        font-size: 19px;
+    }
+}
+
+@keyframes aumentarnavbar{
+    0%{
+        width: 5%;
+    }
+    100%
+    {
+        width: 15%;
+    }
+}
+
+@keyframes diminuirnavbar{
+    0%{
+        width: 15%;
+    }
+    100%{
+        width: 5%;
+    }
+}
